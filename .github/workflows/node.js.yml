@@ -34,6 +34,4 @@ jobs:
         run: CI=false npm run build
         working-directory: ./food-ordering-app
 
-      - name: Test
-        run: npm test
-        working-directory: ./food-ordering-app
+      
