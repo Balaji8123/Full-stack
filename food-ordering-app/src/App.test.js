@@ -3,9 +3,14 @@ import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import App from './App';
 
-// Create a minimal dummy store for testing
+// Minimal mock reducer for cart
+const mockCartReducer = (state = { products: [] }, action) => state;
+
+// Configure store with mock cart slice
 const store = configureStore({
-  reducer: {}, // empty reducer, enough for useSelector/useDispatch hooks
+  reducer: {
+    cart: mockCartReducer,
+  },
 });
 
 test('renders learn react link', () => {
