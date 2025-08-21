@@ -1,11 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import stores from './stores'; // point to your Redux store
+import { configureStore } from '@reduxjs/toolkit';
 import App from './App';
+
+// Create a minimal dummy store for testing
+const store = configureStore({
+  reducer: {}, // empty reducer, enough for useSelector/useDispatch hooks
+});
 
 test('renders learn react link', () => {
   render(
-    <Provider stores={stores}>
+    <Provider store={store}>
       <App />
     </Provider>
   );
